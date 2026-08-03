@@ -12,24 +12,24 @@ trending_products = pd.read_csv("trending_products.csv")
 train_data = pd.read_csv("clean_data.csv")
 
 # database configuration---------------------------------------
-app.secret_key = "alskdjfwoeieiurlskdjfslkdjf"
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost/ecom"
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
+#app.secret_key = "alskdjfwoeieiurlskdjfslkdjf"
+#app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost/ecom"
+#app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+#db = SQLAlchemy(app)
 
 
 # Define your model class for the 'signup' table
-class Signup(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(100), nullable=False)
-    email = db.Column(db.String(100), nullable=False)
-    password = db.Column(db.String(100), nullable=False)
+#class Signup(db.Model):
+    #id = db.Column(db.Integer, primary_key=True)
+    #username = db.Column(db.String(100), nullable=False)
+    #email = db.Column(db.String(100), nullable=False)
+    #password = db.Column(db.String(100), nullable=False)
 
 # Define your model class for the 'signup' table
-class Signin(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(100), nullable=False)
-    password = db.Column(db.String(100), nullable=False)
+#class Signin(db.Model):
+    #id = db.Column(db.Integer, primary_key=True)
+    #username = db.Column(db.String(100), nullable=False)
+    #password = db.Column(db.String(100), nullable=False)
 
 
 # Recommendations functions============================================================================================
@@ -119,9 +119,9 @@ def signup():
         email = request.form['email']
         password = request.form['password']
 
-        new_signup = Signup(username=username, email=email, password=password)
-        db.session.add(new_signup)
-        db.session.commit()
+        #new_signup = Signup(username=username, email=email, password=password)
+        #db.session.add(new_signup)
+        #db.session.commit()
 
         # Create a list of random image URLs for each product
         random_product_image_urls = [random.choice(random_image_urls) for _ in range(len(trending_products))]
@@ -137,9 +137,9 @@ def signin():
     if request.method == 'POST':
         username = request.form['signinUsername']
         password = request.form['signinPassword']
-        new_signup = Signin(username=username,password=password)
-        db.session.add(new_signup)
-        db.session.commit()
+        #new_signup = Signin(username=username,password=password)
+        #db.session.add(new_signup)
+        #db.session.commit()
 
         # Create a list of random image URLs for each product
         random_product_image_urls = [random.choice(random_image_urls) for _ in range(len(trending_products))]
