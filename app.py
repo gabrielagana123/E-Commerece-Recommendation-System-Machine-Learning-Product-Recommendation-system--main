@@ -78,14 +78,14 @@ def content_based_recommendations(train_data, item_name, top_n=10):
 # routes===============================================================================
 # List of predefined image URLs
 random_image_urls = [
-    "static/img/img_1.png",
-    "static/img/img_2.png",
-    "static/img/img_3.png",
-    "static/img/img_4.png",
-    "static/img/img_5.png",
-    "static/img/img_6.png",
-    "static/img/img_7.png",
-    "static/img/img_8.png",
+    "static/img_1.png",
+    "static/img_2.png",
+    "static/img_3.png",
+    "static/img_4.png",
+    "static/img_5.png",
+    "static/img_6.png",
+    "static/img_7.png",
+    "static/img_8.png",
 ]
 
 
