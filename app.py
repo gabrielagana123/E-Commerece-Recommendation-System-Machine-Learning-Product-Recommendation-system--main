@@ -98,10 +98,6 @@ def index():
                            random_product_image_urls=random_product_image_urls,
                            random_price = random.choice(price))
 
-#@app.route("/main")
-#def main():
- #   return render_template('main.html')
-
 @app.route("/main")
 def main():
     random_product_image_urls = [random.choice(random_image_urls) for _ in range(len(trending_products))]
